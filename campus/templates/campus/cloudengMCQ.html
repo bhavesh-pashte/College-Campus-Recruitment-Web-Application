@@ -1,0 +1,91 @@
+<!Doctype html>
+{% extends "campus/base.html" %}
+
+{%block body_block%}
+
+ <html>
+<head>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/jquery.countdown.css">
+    <script type="text/javascript" src="js/jquery.plugin.js"></script>
+    <script type="text/javascript" src="js/jquery.countdown.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <script>
+    $(document).ready(function(){
+    $("#b1").click(function(){
+        $(".rb").show();
+        $(".rb").attr("disabled",true);
+
+
+    });
+    });
+
+
+        function getanswers()
+        {
+        document.getElementById("UserAnswers").innerHTML = "";
+        var e = document.getElementsByTagName("input");
+            for(i = 0 ; i<=e.length;i++)
+            {
+                if(e[i].type=="radio")
+                {
+                    if(e[i].checked)
+                    {
+                        document.getElementById("UserAnswers").innerHTML+="Q "+e[i].name + " The Answers You Are Selected Is : "+e[i].value+"<br>";
+
+                    }
+                }
+            }
+        }
+    </script>
+
+
+</head>
+<body>
+<div class="container">
+    <br><br><br>
+    <h1 class= text-danger mt-3>Cloud Engineer Quiz</h1> $('#until300s').countdown({until: +300});
+    <hr>
+    <div>
+
+        {% for i in  exam %}
+        <table>
+            <tr>
+                <td class="text-primary">{{i.id}} ) {{i.Question3}} ?</td>
+            </tr>
+            <tr>
+                <td><input type = "radio" class="rb" name = {{i.id}} id="Option1111" value="{{i.Option1111}}">{{i.Option1111}}</td>
+            </tr>
+            <tr>
+                <td><input type = "radio" class="rb" name = {{i.id}} id="Option2222" value="{{i.Option2222}}">{{i.Option2222}}</td>
+            </tr>
+            <tr>
+                <td><input type = "radio" class="rb" name = {{i.id}} id="Option3333" value="{{i.Option3333}}">{{i.Option3333}}</td>
+            </tr>
+            <tr>
+                <td><input type = "radio" class="rb" name = {{i.id}} id="Option4444" value="{{i.Option4444}}">{{i.Option4444}}</td>
+            </tr>
+
+            <tr>
+                <td><label id="corans" class= "rb" style="display:none ; color : green"><b>{{i.Corrans3}}</b></label></td>
+            </tr>
+
+        </table>
+<hr>
+
+        {% endfor %}
+        <input type="submit" class="btn btn-success" value="Submit" id="b1" onclick="getanswers()">
+        <br><br>
+        <b id="UserAnswers"></b>
+        </div>
+</div>
+</body>
+</html>
+
+{% endblock %}

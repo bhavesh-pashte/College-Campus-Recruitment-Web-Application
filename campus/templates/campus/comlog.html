@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{%extends "campus/base.html"%}
+
+{%block body_block%}
+<style>
+    abbr[title] {
+  border-bottom: none !important;
+  cursor: inherit !important;
+  text-decoration: none !important;
+}
+</style>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mx-auto text-center mb-5 section-heading">
+         
+          <br><br>
+          <h2>DASHBOARD</h2>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="container">
+        <div class="jumbotron" style="background-color: lightgreen;">
+            <table class="pos2">
+                <tr>
+                    <td><a href=" http://127.0.0.1:8000/company/company_login/jp/  " class="btn btn-lg btn-info mx-5 d-inline-flex "><b style="font-size: 2rem"><abbr title="Update,Delete,View all">Post vacancy</abbr></b></a></td></tr><tr>
+            <td><a href=" http://127.0.0.1:8000/company/company_login/selectstu/ " class="btn btn-lg btn-danger mx-5 d-inline-flex"><b style="font-size: 2rem">Select students</b></a></td></tr>
+              <tr>  <td ><a href=" http://127.0.0.1:8000/company/company_login/ccd/ " class="btn btn-lg btn-warning mx-5 d-inline-flex"><b style="font-size: 2rem">Update Profile Details</b></a></td>
+            
+                </tr>
+
+            </table>
+        </div>
+          
+      </div>
+    </div>
+    
+    
+{%endblock%}
